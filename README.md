@@ -1,27 +1,44 @@
-# FrontClimaPresupuesto
+Descripción del Proyecto
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.11.
+El frontend del proyecto fue desarrollado utilizando Angular. La aplicación permite a los usuarios seleccionar un país y una ciudad, ingresar un presupuesto en COP, y obtener información sobre el clima en la ciudad seleccionada, así como la conversión del presupuesto a la moneda local.
+2. Estructura del Proyecto
 
-## Development server
+    src/app/components: Contiene los componentes de la aplicación.
+        plan-viaje: Componente que permite seleccionar el país y la ciudad.
+        presupuesto: Componente que permite ingresar el presupuesto en COP.
+        fin-plan: Componente que muestra el resumen del plan de viaje.
+        historico: Componente que muestra el historial de viajes.
+    src/app/services: Contiene los servicios que se comunican con el backend.
+        pais.service.ts: Servicio para manejar la lógica relacionada con los países.
+        ciudad.service.ts: Servicio para manejar la lógica relacionada con las ciudades.
+        fin-plan.service.ts: Servicio para manejar el almacenamiento del historial de viajes.
+    src/assets/i18n: Contiene los archivos de traducción para los diferentes idiomas soportados en la aplicación.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+3. Rutas
 
-## Code scaffolding
+    /plan-viaje: Pantalla principal donde el usuario selecciona el país y la ciudad.
+    /presupuesto: Pantalla para ingresar el presupuesto.
+    /fin-plan: Pantalla de resumen del plan de viaje.
+    /historico: Pantalla que muestra el historial de viajes.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+4. Funcionalidades
 
-## Build
+    Selección de País y Ciudad: Utilizando un dropdown, el usuario puede seleccionar el país y la ciudad. Los datos se cargan dinámicamente desde el backend.
+    Ingreso de Presupuesto: Se ingresa el presupuesto en COP, y se valida que sea un número positivo.
+    Resumen del Plan de Viaje: Se muestra un resumen que incluye el clima, la conversión de moneda, y los datos seleccionados por el usuario.
+    Historial de Viajes: Se muestra un historial de las consultas anteriores del usuario, incluyendo los datos de clima y moneda.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+5. Servicios
 
-## Running unit tests
+    Interacción con el Backend: Los servicios de Angular se utilizan para interactuar con la API del backend y obtener los datos necesarios.
+    Servicio de Traducción: Se utiliza @ngx-translate/core para implementar el cambio de idioma en toda la aplicación.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+6. Responsividad
 
-## Running end-to-end tests
+La aplicación está diseñada para ser responsive, utilizando Bootstrap para asegurar que se vea bien en dispositivos móviles, tablets, y pantallas grandes.
+7. Pruebas
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Se realizaron pruebas en diferentes navegadores y dispositivos para asegurar la funcionalidad correcta en todas las plataformas.
+8. Despliegue
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+El frontend está preparado para ser desplegado en un servidor web. Los archivos compilados están en la carpeta dist/, listos para ser servidos por un servidor HTTP.# front-plan-viaje
