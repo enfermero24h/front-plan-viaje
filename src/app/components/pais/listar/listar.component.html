@@ -1,0 +1,25 @@
+<table class="table table-striped table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Código ISO</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pais of paises">
+      <td>{{ pais.id }}</td>
+      <td>{{ pais.nombre }}</td>
+      <td>{{ pais.codigo_iso }}</td>
+      <td>
+        <button class="btn btn-warning btn-sm" (click)="onEdit(pais)">
+          <i class="bi bi-pencil-square"></i> Editar
+        </button>
+        <button class="btn btn-danger btn-sm" (click)="onDelete(pais)">
+          <i class="bi bi-trash"></i> Eliminar
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

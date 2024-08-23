@@ -1,0 +1,11 @@
+<div class="alert alert-danger">
+  <h5>¿Estás seguro de que deseas eliminar el país "{{ pais.nombre }}"?</h5>
+  <div>
+    <button class="btn btn-danger" (click)="confirmDelete()">
+      <i class="bi bi-trash"></i> Eliminar
+    </button>
+    <button class="btn btn-secondary" (click)="cancel()">
+      <i class="bi bi-x-circle"></i> Cancelar
+    </button>
+  </div>
+</div>

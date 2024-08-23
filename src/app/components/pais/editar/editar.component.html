@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="card-header bg-warning text-white">
+    <h5>Editar País</h5>
+  </div>
+  <div class="card-body">
+    <form (ngSubmit)="save()">
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" [(ngModel)]="pais.nombre" name="nombre" class="form-control" required />
+      </div>
+      <div class="form-group">
+        <label for="codigo_iso">Código ISO</label>
+        <input id="codigo_iso" [(ngModel)]="pais.codigo_iso" name="codigo_iso" class="form-control" required />
+      </div>
+      <button type="submit" class="btn btn-success">
+        <i class="bi bi-check-circle"></i> Guardar Cambios
+      </button>
+    </form>
+  </div>
+</div>

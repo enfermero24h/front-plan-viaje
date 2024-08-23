@@ -1,0 +1,50 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>{{ 'planDeViaje' | translate }}</h2>
+    <!-- Barra de Progreso -->
+    <div class="progress" style="width: 50%;">
+      <div class="progress-bar bg-success" role="progressbar" [style.width.%]="progress" aria-valuenow="progress" aria-valuemin="0" aria-valuemax="100">
+        {{ 'paso' | translate: { currentStep: currentStep } }}
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Formulario para seleccionar país y ciudad -->
+  <div class="form-group position-relative">
+    <label for="pais">{{ 'seleccionaPais' | translate }}</label>
+    <select id="pais" [(ngModel)]="selectedPaisId" (change)="onPaisChange()" class="form-control">
+      <option [ngValue]="null" disabled>{{ 'seleccionaPais' | translate }}</option>
+      <option *ngFor="let pais of paises" [ngValue]="pais">{{ pais.nombre }}</option>
+    </select>
+    <!-- Ícono de desplegable -->
+    <i class="fas fa-chevron-down dropdown-icon"></i>
+    <div *ngIf="loading" class="loading-spinner-input">
+      <div class="spinner-border text-primary" role="status">
+        <span class="sr-only">.</span>
+      </div>
+    </div>
+  </div>
+  
+  <div *ngIf="ciudades.length > 0 || loading" class="form-group position-relative mt-3">
+    <label for="ciudad">{{ 'seleccionaCiudad' | translate }}</label>
+    <select id="ciudad" class="form-control" [(ngModel)]="selectedCiudadId">
+      <option [ngValue]="null" disabled>{{ 'seleccionaCiudad' | translate }}</option>
+      <option *ngFor="let ciudad of ciudades" [ngValue]="ciudad">{{ ciudad.nombre }}</option>
+    </select>
+    <!-- Ícono de desplegable -->
+    <i class="fas fa-chevron-down dropdown-icon"></i>
+    <div *ngIf="loading" class="loading-spinner-input">
+      <div class="spinner-border text-primary" role="status">
+        <span class="sr-only">.</span>
+      </div>
+    </div>
+  </div>
+  
+
+    <div *ngIf="selectedCiudadId" class="text-center mt-5">
+      <button class="btn btn-primary btn-lg" (click)="irAPresupuesto()">{{ 'siguiente' | translate }}</button>
+    </div>
+  
+</div>

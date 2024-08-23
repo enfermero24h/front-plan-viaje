@@ -1,0 +1,17 @@
+<div class="container">
+    <h2>Crear Nuevo País</h2>
+  
+    <form (ngSubmit)="createPais()">
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" [(ngModel)]="pais.nombre" name="nombre" class="form-control" required />
+      </div>
+      <div class="form-group">
+        <label for="codigo_iso">Código ISO</label>
+        <input id="codigo_iso" [(ngModel)]="pais.codigo_iso" name="codigo_iso" class="form-control" required />
+      </div>
+      <button type="submit" class="btn btn-success">Crear</button>
+      <button type="button" class="btn btn-secondary" (click)="cancel()">Cancelar</button>
+    </form>
+  </div>
+  

@@ -1,0 +1,49 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Presupuesto de Viaje</h2>
+    <!-- Barra de Progreso -->
+    <div class="progress" style="width: 50%;">
+      <div class="progress-bar bg-success" role="progressbar" [style.width.%]="progress" aria-valuenow="progress" aria-valuemin="0" aria-valuemax="100">
+        Paso {{ currentStep }} de 3
+      </div>
+    </div>
+  </div>
+
+  <form #presupuestoForm="ngForm" novalidate>
+    <div class="form-group">
+      <label for="presupuesto">Ingresa tu presupuesto (COP)</label>
+      <input 
+        type="number" 
+        id="presupuesto" 
+        [(ngModel)]="presupuesto" 
+        name="presupuesto" 
+        class="form-control" 
+        placeholder="Ingrese su presupuesto" 
+        min="1" 
+        required
+        (ngModelChange)="presupuesto = +$event" 
+        [ngClass]="{
+          'is-invalid': presupuestoForm.submitted && !presupuestoForm.controls['presupuesto'].valid, 
+          'is-valid': presupuestoForm.submitted && presupuestoForm.controls['presupuesto'].valid
+        }">
+      
+      <!-- Mensaje de error si el campo es inválido -->
+      <div *ngIf="presupuestoForm.submitted && !presupuestoForm.controls['presupuesto'].valid" class="invalid-feedback">
+        <div *ngIf="presupuestoForm.controls['presupuesto'].errors?.['required']">El presupuesto es obligatorio.</div>
+        <div *ngIf="presupuestoForm.controls['presupuesto'].errors?.['min']">El presupuesto debe ser un número positivo.</div>
+      </div>
+    </div>
+
+    <div class="text-center mt-5">
+      <button type="button" class="btn btn-danger btn-lg" (click)="irAtras()">Atrás</button>
+      <button 
+        type="submit" 
+        class="btn btn-primary btn-lg" 
+        [disabled]="!presupuestoForm.valid" 
+        [ngClass]="{ 'btn-secondary': !presupuestoForm.valid }" 
+        (click)="irAFinPlan(presupuestoForm)">
+        Siguiente
+      </button>
+    </div>
+  </form>
+</div>

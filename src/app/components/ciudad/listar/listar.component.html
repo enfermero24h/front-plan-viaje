@@ -1,0 +1,28 @@
+<table class="table table-striped table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>nombre</th>
+        <th>pais_id</th>
+        <th>moneda</th>
+        <th>simbolo_moneda</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ciudades of ciudades">
+        <td>{{ ciudades.id }}</td>
+        <td>{{ ciudades.pais_id }}</td>
+        <td>{{ ciudades.moneda }}</td>
+        <td>{{ ciudades.simbolo_moneda }}</td>
+        <td>
+          <button class="btn btn-warning btn-sm" (click)="onEdit()">
+            <i class="bi bi-pencil-square"></i> Editar
+          </button>
+          <button class="btn btn-danger btn-sm" (click)="onDelete()">
+            <i class="bi bi-trash"></i> Eliminar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

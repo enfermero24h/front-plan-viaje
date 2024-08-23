@@ -1,0 +1,20 @@
+.form-group.position-relative {
+    position: relative;
+  }
+  
+  .loading-spinner-input {
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+  }
+  
+  .spinner-border {
+    width: 20px;
+    height: 20px;
+    border-width: 2px;
+  }
+  
+  .spinner-border.text-primary {
+    color: #007bff;
+  }
+  

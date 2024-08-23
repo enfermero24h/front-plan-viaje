@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+.container {
+    margin-top: 20px;
+  }
+  
+  .card {
+    margin-top: 20px;
+  }
+  
+  .btn {
+    margin-right: 5px;
+  }
+  

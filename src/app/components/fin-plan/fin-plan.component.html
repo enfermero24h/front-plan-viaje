@@ -1,0 +1,40 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card shadow-sm">
+        <div class="card-header text-center bg-primary text-white py-3">
+          <h2 class="mb-0">{{ 'resumenPlanViaje' | translate }}</h2>
+        </div>
+        <div class="card-body p-4">
+          <!-- Información General -->
+          <h4 class="mb-4 text-primary">{{ 'informacionGeneral' | translate }}</h4>
+          <div class="mb-4">
+            <p class="mb-2"><strong>{{ 'pais' | translate }}:</strong> {{ pais.nombre }}</p>
+            <p class="mb-2"><strong>{{ 'ciudad' | translate }}:</strong> {{ ciudad.nombre }}</p>
+            <p class="mb-2"><strong>{{ 'presupuestoCOP' | translate }}:</strong> {{ presupuesto | currency:'COP' }}</p>
+          </div>
+
+          <!-- Información del Clima -->
+          <div *ngIf="clima" class="mb-4">
+            <h4 class="mb-3 text-primary">{{ 'clima' | translate }}</h4>
+            <p class="mb-2"><strong>{{ 'temperaturaEnCiudad' | translate:{ ciudad: ciudad.nombre } }}:</strong> {{ clima }}°C</p>
+            </div>
+
+          <!-- Información Monetaria -->
+          <div *ngIf="monedaLocal" class="mt-4">
+            <h4 class="mb-3 text-primary">{{ 'monedaLocal' | translate }}</h4>
+            <p class="mb-2"><strong>{{ 'nombreMoneda' | translate }}:</strong> {{ nombreMoneda }}</p>
+            <p class="mb-2"><strong>{{ 'simboloMoneda' | translate }}:</strong> {{ monedaLocal }}</p>
+            <p class="mb-2"><strong>{{ 'presupuestoConvertido' | translate }}:</strong> {{ conversion | currency:monedaLocal }}</p>
+            <p class="mb-2"><strong>{{ 'tasaCambioAplicada' | translate }}:</strong> 1 COP = {{ tasaCambio }} {{ monedaLocal }}</p>
+          </div>
+        </div>
+        <div class="card-footer bg-light d-flex justify-content-end">
+          <button class="btn btn-outline-secondary btn-lg" (click)="volverAPlanDeViaje()">
+            {{ 'volverInicio' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

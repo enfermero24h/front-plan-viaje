@@ -1,0 +1,31 @@
+
+{
+    "planDeViaje": "Plan de Viaje",
+    "paso": "Paso",
+    "de": "de",
+    "seleccionaPais": "Selecciona un país",
+    "seleccionaCiudad": "Selecciona una ciudad",
+    "siguiente": "Siguiente",
+    "atras": "Atrás",
+    "historialPlanesViaje": "Historial de Planes de Viaje",
+    "ciudad": "Ciudad",
+    "pais": "País",
+    "presupuestoCOP": "Presupuesto en COP",
+    "monedaLocal": "Moneda Local",
+    "simboloMoneda": "Símbolo de Moneda",
+    "presupuestoConvertido": "Presupuesto Convertido",
+    "climaActual": "Clima Actual",
+    "condicionClimatica": "Condición Climática",
+    "fechaCreacion": "Fecha de Creación",
+    "volverPlanViaje": "Volver al Plan de Viaje",
+    "resumenPlanViaje": "Resumen del Plan de Viaje",
+    "informacionGeneral": "Información General",
+    "clima": "Clima",
+    "temperaturaEnCiudad": "Temperatura en {{ ciudad }}",
+    "condicion": "Condición",
+    "nombreMoneda": "Moneda",
+    "tasaCambioAplicada": "Tasa de Cambio Aplicada",
+    "volverInicio": "Volver al Inicio"
+    
+  }
+  
